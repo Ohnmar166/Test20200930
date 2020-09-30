@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -WebAppTest20200826</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+    @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap-4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-4.5.2/css/bootstrap-grid.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-4.5.2/css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/styles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Content/bootstrap-4.5.2/js/bootstrap.min.js"></script>
+    <script src="~/Content/bootstrap-4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/apex-chart/apexcharts.min.js"></script>
+    <script src="~/Content/apex-chart/axios.min.js"></script>
+    <script src="~/Content/chart-js/analyser.js"></script>
+    <script src="~/Content/chart-js/chart.min.js"></script>
+    <script src="~/Content/chart-js/utils.js"></script>
+    <script src="~/Content/amcharts/core.js"></script>
+    <script src="~/Content/amcharts/charts.js"></script>
+    <script src="~/Content/amcharts/animated.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="@Url.Action("index","Home")">WebAppTest20200826</a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="@Url.Action("index","Home")">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        @*<a class="dropdown-item" hre f="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>*@
+                        <a class="dropdown-item" href="@Url.Action("AreaChart","Home")">Area Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("HeatMap","Home")">Heap Map</a>
+                        <a class="dropdown-item" href="@Url.Action("MonochroneChart","Home")">Monochrone Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("RadialBarChart","Home")">Radial Bar Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bars</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="@Url.Action("TimeLine","Home")">Time Line</a>
+                        <a class="dropdown-item" href="@Url.Action("StackedBarChart","Home")">Stacked Bar Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("VerticalChart","Home")">Vertical Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("MultiAxis","Home")">Multi Axis</a>
+                        <a class="dropdown-item" href="@Url.Action("HorizontalChart","Home")">Horizontal Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("StackedBarChartGroup","Home")">Stacked Bar Chart Group</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lines</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="@Url.Action("BasicLineChart","Home")">Basic Line Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("InterpolationModesChart","Home")">Interpolation Modes Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineStyleChart","Home")">Line Style Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("PointSizesChart","Home")">Point Sizes Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("PointStylesChart","Home")">Point Styles Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("SkipPointChart","Home")">Skip Point Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("SteppedChart","Home")">Stepped Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Area Chart</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="@Url.Action("LineBoundariesChart","Home")">Line Boundaries Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineDatasetsChart","Home")">Line Datasets Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineStackedChart","Home")">Line Stacked Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineChart","Home")">Line Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("RadarChart","Home")">Radar Chart</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">AmCharts4</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="@Url.Action("SimpleTreeMap","Home")">Simple Tree Map</a>
+                        @*<a class="dropdown-item" href="@Url.Action("LineDatasetsChart","Home")">Line Datasets Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineStackedChart","Home")">Line Stacked Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("LineChart","Home")">Line Chart</a>
+                        <a class="dropdown-item" href="@Url.Action("RadarChart","Home")">Radar Chart</a>*@
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div class="container body-content" style="margin-top: 60px;">
+        @RenderBody()
+        <hr />
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year -WebAppTest20200826</p>
+            </footer>*@
+    </div>
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
+</body>
+</html>

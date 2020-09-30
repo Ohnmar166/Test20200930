@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Alerts";
+}
+
+<h2>Alerts</h2>
+
+<div class="alert alert-primary" role="alert" id="div-id">
+    A simple primary alert—check it out!
+</div>
+@*<div class="alert alert-dark" role="alert" id="myalert">
+    A simple dark alert—check it out!
+</div>*@
+@*<div id="res"></div>*@
+@*<button class="btn btn-info" onclick="myClick()">Click</button>*@
+@*<button class="btn btn-info" id="myClick" >Show</button>*@
+<button class="btn btn-success" type="button" onclick="" id="mydiv">Click1</button>
+<button class="btn btn-primary"type="button" onclick="" id="myClose">Close</button>
+
+@*<div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+
+    <div class="alert alert-info" role="alert">
+        A simple info alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+    </div>*@
+<div class="alert alert-warning" role="alert">
+    A simple warning alert—check it out!
+</div>
+@*<div class="alert alert-primary" role="alert">
+        A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+    </div>*@
+<script>
+     $('document').ready(function () {
+        $('.alert.alert-warning').show();
+    });
+
+    $('#div-id').hide();
+    //$('#myalert').hide();
+
+    //function myClick() {
+    //    $('#div-id').show();
+    //}
+    $('#mydiv').click(function () {
+    $('#div-id').show();
+    });
+
+    $('#myClose').click(function (){
+
+    $('#div-id').alert('close');
+});
+</script>
+
